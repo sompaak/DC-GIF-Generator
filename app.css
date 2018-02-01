@@ -1,0 +1,35 @@
+.alignment
+{
+	float: left;
+}
+
+#title
+{
+	color: white
+}
+
+
+#image
+{
+	width:750px;
+	padding-left: -50px;
+	display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+
+body
+{
+	 background-image: url("background.jpg");
+	 background-size: cover;
+}
+
+.panel
+{
+	position: relative;
+	bottom: -200px;
+
+	opacity: 0.9;
+}

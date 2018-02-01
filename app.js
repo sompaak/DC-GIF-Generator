@@ -4,7 +4,7 @@
 
 $(document).ready(function() {  
 
-   var movies = ["The Matrix", "The Notebook", "Mr. Nobody", "The Lion King"];
+   var movies = [];
 
       // Function for displaying movie data
       function renderButtons() {
@@ -20,7 +20,8 @@ $(document).ready(function() {
           // This code $("<button>") is all jQuery needs to create the start and end tag. (<button></button>)
           var myButton = $("<button>");
           // Adding a class
-          
+          myButton.addClass("btn")
+
           // Adding a data-attribute with a value of the movie at index i
           myButton.attr("data-name", movies[i]);
           // Providing the button's text with a value of the movie at index i
@@ -53,15 +54,15 @@ $(document).ready(function() {
 
 
 
-     
+     function getinfo(){
 
-    $("button").on("click", function() {
+    
       // Grabbing and storing the data-animal property value from the button
       var gif = $(this).attr("data-name");
 
       // Constructing a queryURL using the animal name
-      var queryURL = "https://api.giphy.com/v1/gifs/search?q=" +
-        gif + "&api_key=dc6zaTOxFJmzC";
+      var queryURL = "https://api.giphy.com/v1/gifs/search?q=" + 
+        gif + "&limit=4&api_key=dc6zaTOxFJmzC";
 
       // Performing an AJAX request with the queryURL
       $.ajax({
@@ -85,8 +86,9 @@ $(document).ready(function() {
           
             // Creating and storing an image tag
             var GifImage = $("<img>");
+            GifImage.addClass("alignment")
             // Setting the src attribute of the image to a property pulled off the result item
-            GifImage.attr("src", results[i].images.fixed_height.url);
+            GifImage.attr("src", results[i].images.fixed_height_small.url);
 
             // Appending the paragraph and image tag to the animalDiv
             
@@ -98,9 +100,11 @@ $(document).ready(function() {
         
         });
 
-  
+      }
 
-      });
+  
+  $(document).on("click", ".btn", getinfo);
+      
 
 
 
