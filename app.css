@@ -30,6 +30,12 @@ body
 {
 	position: relative;
 	bottom: -200px;
+	
+	opacity: 0.8;
 
-	opacity: 0.9;
+}
+
+.panel-heading
+{
+	background-color:#FF6347;
 }
