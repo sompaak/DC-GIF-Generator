@@ -62,6 +62,6 @@ $(document).ready(function()
 
     renderButtons();
   });
-  //renderButtons();
+  renderButtons();
   $(document).on("click", ".btn", getinfo); 
 });
