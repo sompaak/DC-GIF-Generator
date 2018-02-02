@@ -14,15 +14,7 @@ function renderButtons()
       $("#buttons").append(myButton);
     }
 
-    $("#add-movie").on("click", function(event) 
-    {
-    
-    event.preventDefault();
-    var movie = $("#movie-input").val().trim();
-    movies.push(movie);
-
-    renderButtons();
-  });
+   
 
 }
 
@@ -60,6 +52,16 @@ function getinfo()
 
 $(document).ready(function() 
 {  
-  renderButtons();
+
+   $("#add-movie").on("click", function(event) 
+    {
+    
+    event.preventDefault();
+    var movie = $("#movie-input").val().trim();
+    movies.push(movie);
+
+    renderButtons();
+  });
+  //renderButtons();
   $(document).on("click", ".btn", getinfo); 
 });
